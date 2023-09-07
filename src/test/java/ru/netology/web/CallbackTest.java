@@ -14,6 +14,6 @@ public class CallbackTest {
         $("[data-test-id=phone] input").setValue("+71234567890");
         $("[data-test-id=agreement]").click();
         $(".button").click();
-        $(".paragraph").shouldHave(exactText("Ваша успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $(".paragraph").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
