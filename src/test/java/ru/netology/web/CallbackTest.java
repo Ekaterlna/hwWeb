@@ -3,9 +3,9 @@ package ru.netology.web;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -116,6 +116,8 @@ public class CallbackTest {
         $("[data-test-id=name] input").setValue("Иванов Иван");
         $("[data-test-id=phone] input").setValue("+71234567890");
         $(".button").click();
-        $("[data-test-id='agreement'].input_invalid").shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
+//        $("[data-test-id='agreement'].input_invalid").shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
+        $("[data-test-id='agreement'].checkbox_checked").shouldBe(hidden);
+        $("[data-test-id='agreement'].input_invalid").shouldBe(visible);
     }
 }
